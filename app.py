@@ -55,8 +55,14 @@ if uploaded_file:
 
     # --- Prompt Template (fixed for Gemini) ---
     prompt = ChatPromptTemplate.from_template(
-        "You are my personal assistant to help me talk with the PDF. "
-        "Use the following context to answer the question:\n\n{context}\n\nQuestion: {input}"
+        "You are a helpful, expert tutor who explains any topic clearly and simply. "
+        "When answering, use this structure:\n\n"
+        "**Definition**: What it is\n"
+        "**How it works**: Key components or steps\n"
+        "**Real-world examples**: Where it's used or seen\n"
+        "**Analogy**: A simple metaphor or comparison\n\n"
+        "Use the following context to answer:\n\n{context}\n\nQuestion: {input}"
+
     )
 
     # --- RAG Chain ---
